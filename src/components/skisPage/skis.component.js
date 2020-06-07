@@ -19,11 +19,26 @@ export default class skisPage extends Component {
         })
     }
 
+
     
     render() {
+        if (!this.state.skis.length) {
+            return <div>Didn't get Skis</div>;
+        }
+
         return (
             <div>
-                <p>Welcome to the ski page</p>
+                <div>
+                    <h3>Welcome to Skis</h3>
+                </div>
+                {this.state.skis.map(skis =>(
+                    <div key={skis._id}>
+                        <img src={skis.imgPath} alt='pictures of skis'/>
+                        <div>Name: {skis.name}</div>
+                        <div>Type: {skis.description}</div>
+                        <div>Price: ${skis.price}</div>
+                    </div>
+                ))}
             </div>
         )
     }

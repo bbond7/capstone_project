@@ -58,6 +58,26 @@ productRoutes.route('/skis').get(function(req, res) {
     });
 });
 
+productRoutes.route('/skiboots').get(function(req, res) {
+    Product.find({category: 'Boots'}, function(err, products) {
+        if (err) {
+            console.log(err);
+        } else {
+            res.json(products);
+        }
+    });
+});
+
+productRoutes.route('/skibindings').get(function(req, res) {
+    Product.find({category: 'Bindings'}, function(err, products) {
+        if (err) {
+            console.log(err);
+        } else {
+            res.json(products);
+        }
+    });
+});
+
 app.use('/user', userRoutes);
 app.use('/products', productRoutes);
 
