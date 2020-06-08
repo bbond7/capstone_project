@@ -25,16 +25,16 @@ export default class skiBootsPage extends Component {
         }
 
         return (
-            <div>
+            <div className='container'>
                 <div>
-                    <h3>Welcome to Boots</h3>
+                    <h3 className='text-center'>Welcome to Boots</h3>
                 </div>
                 {this.state.skiboots.map(skiboots =>{
-                    return (<div key={skiboots._id}>
+                    return (<div key={skiboots._id} className='row'>
                         <img src={skiboots.imgPath} alt='Ski Boots' />
-                        <div>Name: {skiboots.name}</div>
-                        <div>Type: {skiboots.description}</div>
-                        <div>Price: ${skiboots.price}</div>
+                        <div className='col-md'>Name: {skiboots.name}</div>
+                        <div className='col-md'>Type: {skiboots.description}</div>
+                        <div className='col-md'>Price: ${skiboots.price}</div>
                     </div>);
                 })}
             </div>

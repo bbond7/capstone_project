@@ -27,16 +27,16 @@ export default class skiBindingsPage extends Component {
 
 
         return (
-            <div>
+            <div className='container'>
                 <div>
-                    <h3>Welcome to Bindings</h3>
+                    <h3 className='text-center'>Welcome to Bindings</h3>
                 </div>
                 {this.state.bindings.map(bindings =>(
-                    <div key={bindings._id}>
+                    <div key={bindings._id} className='row'>
                         <img src={bindings.imgPath} alt="ski Binidings" />
-                        <div>Name: {bindings.name}</div>
-                        <div>Type: {bindings.description}</div>
-                        <div>Price: ${bindings.price}</div>
+                        <div className='col-md'>Name: {bindings.name}</div>
+                        <div className='col-md'>Type: {bindings.description}</div>
+                        <div className='col-md'>Price: ${bindings.price}</div>
                     </div>
                 ))}
                 
