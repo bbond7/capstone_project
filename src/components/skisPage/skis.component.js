@@ -27,19 +27,19 @@ export default class skisPage extends Component {
         }
 
         return (
-            <div>
-                <div>
-                    <h3>Welcome to Skis</h3>
-                </div>
-                {this.state.skis.map(skis =>(
-                    <div key={skis._id}>
-                        <img src={skis.imgPath} alt='pictures of skis'/>
-                        <div>Name: {skis.name}</div>
-                        <div>Type: {skis.description}</div>
-                        <div>Price: ${skis.price}</div>
-                    </div>
-                ))}
-            </div>
+         <div>
+             <div>
+                 <h2>Welcome to Skis</h2>
+             </div>
+             {this.state.skis.map(skis =>(
+                 <div key={skis._id}>
+                     <img src={skis.imgPath} alt='pictures of skis'/>
+                     <div>Name: {skis.name}</div>
+                     <div>Type: {skis.description}</div>
+                     <div>Price: ${skis.price}</div>
+                 </div>
+             ))}
+         </div>
         )
     }
 }
